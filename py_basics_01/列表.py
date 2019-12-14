@@ -38,3 +38,11 @@ del member[3]     #删除元素下标为3的元素
 del member        #删除整个member数组
 print(member)
 
+
+#pop列表分片,分片仅仅是取出这“片”的数据，并不会改变列表本身。
+ member.pop()         #括号里没有参数，表示删除list数组中最后一个元素
+ print(member)
+
+#pop(index)，用作于删除制定下标的元素，并且返回删除后的元素列表
+member.pop(2)
+print(member)
