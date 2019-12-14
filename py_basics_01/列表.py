@@ -63,3 +63,7 @@ print(list)           #输出结果：['456', '翠花', '123']
 list1 = [1,3,17,2,7,20,4,6,10]
 list1.sort()
 print(list1)           #输出结果： [1, 2, 3, 4, 6, 7, 10, 17, 20]
+
+#列表元素排序 sort,从大到小排序
+list1.sort(reverse=True)
+print(list1)
