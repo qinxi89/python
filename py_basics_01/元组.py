@@ -24,7 +24,14 @@ tuple[1] = 11
 print(tuple2)     #输出内容：TypeError: 'tuple' object does not support item assignment
 
 
+#创建空列表，空元组
+temp1 = []
+temp = ()
+print(temp)       #输出内容：（）
+print(temp1)      #输出内容：[]
 
+s = type(temp)
+print(s)            #输出内容：<class 'tuple'>
 
 
 
