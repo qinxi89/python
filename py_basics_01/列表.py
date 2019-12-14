@@ -54,3 +54,12 @@ print(p)         #返回结果：True
 
 t = list.index('翠花')
 print(t)         #返回结果：1
+
+#列表前后元素翻转，reverse()
+list.reverse()
+print(list)           #输出结果：['456', '翠花', '123']
+
+#列表元素排序，默认从小到大排序
+list1 = [1,3,17,2,7,20,4,6,10]
+list1.sort()
+print(list1)           #输出结果： [1, 2, 3, 4, 6, 7, 10, 17, 20]
