@@ -46,3 +46,11 @@ print(member)
 #pop(index)，用作于删除制定下标的元素，并且返回删除后的元素列表
 member.pop(2)
 print(member)
+
+
+list = ['123','翠花','456']
+p = '123' in list
+print(p)         #返回结果：True
+
+t = list.index('翠花')
+print(t)         #返回结果：1
