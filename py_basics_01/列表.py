@@ -4,6 +4,8 @@
 # @Author  : qinxi
 # @Site    : www.iqinxi.com
 # @File    : test.py
+#2019
+
 
 #list 列表
 member = [1,2,3,4,5]
