@@ -33,3 +33,8 @@ member.insert(2,'miya')
 print(member)     #输出结果：[1, 2, 'miya', 3, 4, 5, 'qinxi', 'test', '加油']
 
 
+#删除数组中的元素
+del member[3]     #删除元素下标为3的元素
+del member        #删除整个member数组
+print(member)
+
