@@ -8,6 +8,7 @@ while count <3:
    user_input = int(input("input you guess num:"))
    if user_input == my_age:
       print("congratuation,the num you guess is correctly!")
+      break           #如果输入正确，就退出！
    elif user_input > my_age:
       print("the num you guess is bigger!")
    else:
