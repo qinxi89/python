@@ -6,11 +6,33 @@
 # @File    : test.py
 #2019
 
-
 #list 列表
 member = [1,2,3,4,5]
 print(member)           #输出 结果：[1, 2, 3, 4, 5]
 
+################################## 切 片 ################################
+list = ['abao','xiaorang','kaier','huaan','jingke','zhuer']
+#取下标1到4对应的列表元素，包括1，但是不包括4
+s = list[1:4]
+print(s)        #输出结果：['xiaorang', 'kaier', 'huaan']
+
+#取下标1到列表倒数第二个元素的内容
+s2 = list[1:-1]
+print(s2)      #输出结果：['xiaorang', 'kaier', 'huaan', 'jingke']
+
+#省略前下标，默认从0开始
+s3 = list[:3]
+print(s3)       #输出结果：['abao', 'xiaorang', 'kaier']
+
+#省略后下标，默认取到最后一个
+s4 = list[4:]
+print(s4)       #输出结果：['jingke', 'zhuer']
+
+#按步长取元素
+s5 = list[0::2]       #从下标0开始取到最后一个位，每隔两个取
+print(s5)             #输出结果：['abao', 'kaier', 'jingke']
+
+#####################################追加###############################
 #append（）方法
 member.append('qinxi')
 print(member)           #输出结果： [1, 2, 3, 4, 5, 'qinxi']
@@ -18,6 +40,10 @@ print(member)           #输出结果： [1, 2, 3, 4, 5, 'qinxi']
 #member.append('you','黑夜')
 #print(member)           # 输出结果： TypeError: append() takes exactly one argument (2 given)，
 #append() 方法只能追加一个元素。
+
+
+
+
 
 #extend()方法
 member.extend(['test','加油'])
