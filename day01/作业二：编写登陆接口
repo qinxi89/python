@@ -2,3 +2,53 @@
 输入用户名密码
 认证成功后显示欢迎信息
 输错三次后锁定
+
+#!/usr/bin/python
+# -*- coding:utf-8 -*-
+# @Time    : 2019/12/15 8:37 下午
+# @Author  : qinxi
+# @Site    : www.iqinxi.com
+# @File    : test3.py
+
+lock_username = "./lock_username.txt"      #存放输入三次被锁定的用户名文本
+count = 0
+name = "qinxi"
+passwd = "123456"
+
+while count <3:
+    input_name = input('please input you name:')
+    input_passwd = input("please input you sercet:")
+
+#在输入用户名和密码之前对用户名是否锁定进行校验
+    f = open(lock_username, "r")         #对锁定的用户名文件读取
+    while True:
+        context = f.readline()           #将读取到的用户名存到变量中
+        if context == '':                #如果文件为空，退出
+            break
+        if context == name:
+            print("you account is locked! please contact the administrator!")
+        exit()        ##当账户被锁定后，不往后执行下面内容，如果不退出，会输出下面打印的内容。
+        count = 3
+    f.close()
+
+#开始校验用户名和密码
+    if input_name == name and input_passwd == passwd:
+       print('welcome !',input_name)
+       break
+    else:
+       print("the name or passwd is error !")
+
+    if count == 2:
+       with open(lock_username, "a+") as f:     #打开文件，逐行写入
+        input_name = input_name + '\n'        #换行
+        f.write(name)
+        print("sorry,Your account has been locked !")
+    else:
+        print("login failed, you stil have "+str(2-count)+" chances")
+    count +=1
+
+
+#注：
+1、上面代码功能缺点在于lock_username.txt不能自动创建，需要手动创建。
+2、如果文件名被锁定，用户名存在于lock_username.txt中时，不能自动清除，需要手动删除,才能解锁.
+
