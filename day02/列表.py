@@ -32,7 +32,8 @@ print(s4)       #输出结果：['jingke', 'zhuer']
 s5 = list[0::2]       #从下标0开始取到最后一个位，每隔两个取
 print(s5)             #输出结果：['abao', 'kaier', 'jingke']
 
-#####################################追加###############################
+
+##################################  追 加  ###############################
 #append（）方法
 member.append('qinxi')
 print(member)           #输出结果： [1, 2, 3, 4, 5, 'qinxi']
@@ -41,37 +42,48 @@ print(member)           #输出结果： [1, 2, 3, 4, 5, 'qinxi']
 #print(member)           # 输出结果： TypeError: append() takes exactly one argument (2 given)，
 #append() 方法只能追加一个元素。
 
-
-
-
-
 #extend()方法
 member.extend(['test','加油'])
 print(member)          #输出结果：[1, 2, 3, 4, 5, 'qinxi', 'test', '加油']
 
-#len() 方法
 
-s = len(member)
-print(s)        #输出结果 ：8  ；具体元素为：[1, 2, 3, 4, 5, 'qinxi', 'test', '加油']
-
-# insert（）方法，在数组中下标后插入
-member.insert(2,'miya')
-print(member)     #输出结果：[1, 2, 'miya', 3, 4, 5, 'qinxi', 'test', '加油']
+################################ 插  入  ################################
+list = ['abao','xiaorang','kaier','huaan','jingke','zhuer']
+#下标      0       1          2       3       4        5
+list.insert(3,'我是新插入的')    #默认从第 3-1 个元素后面插入
+print(list)          #输出内容：['abao', 'xiaorang', 'kaier', '我是新插入的', 'huaan', 'jingke', 'zhuer']
 
 
-#删除数组中的元素
-del member[3]     #删除元素下标为3的元素
-del member        #删除整个member数组
-print(member)
+################################ 修  改  ###############################
+list = ['abao', 'xiaorang', 'kaier', 'huaan', 'jingke', 'zhuer']
+list[2] = 'lihongzhang'
+print(list)        #输出内容：['abao', 'xiaorang', 'lihongzhang', 'huaan', 'jingke', 'zhuer']
 
 
-#pop列表分片,分片仅仅是取出这“片”的数据，并不会改变列表本身。
- member.pop()         #括号里没有参数，表示删除list数组中最后一个元素
- print(member)
+################################ 删 除  ###############################
+#删除数组中指定下标的元素
+del list[3]     #删除元素下标为3的元素
+del list        #删除整个member数组
+print(list)
 
 #pop(index)，用作于删除制定下标的元素，并且返回删除后的元素列表
-member.pop(2)
-print(member)
+list.pop(2)
+print(list)
+
+#删除指定元素
+list.remove('kaier')
+print(list)      #输出内容：['abao', 'xiaorang', 'huaan', 'jingke', 'zhuer']
+
+#删除列表最后一个元素
+ list.pop()         
+ print(list)
+
+ 
+ 
+################################################ 列表的其他方法 ##################################
+#len() 方法
+s = len(member)
+print(s)        #输出结果 ：8  ；具体元素为：[1, 2, 3, 4, 5, 'qinxi', 'test', '加油']
 
 
 list = ['123','翠花','456']
