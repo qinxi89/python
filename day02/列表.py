@@ -78,6 +78,10 @@ print(list)      #输出内容：['abao', 'xiaorang', 'huaan', 'jingke', 'zhuer'
  list.pop()         
  print(list)
 
+################################# 列表中元素统计 ##########################
+list = ['abao', 'xiaorang', 'kaier', 'huaan', 'jingke', 'zhuer','huaan']
+l=list.count('huaan')
+print(l)        #返回 2
  
  
 ################################################ 列表的其他方法 ##################################
