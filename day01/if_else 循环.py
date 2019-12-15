@@ -35,8 +35,17 @@ if name == 'qinxi' and pwd == 'cuihua':
 else:
     print("you name or sercert is error ！")
 ##################################################################
-    
-    
+ 场景二、猜年龄游戏
+在程序里设定好你的年龄，然后启动程序让用户猜测，用户输入后，根据他的输入提示用户输入的是否正确，如果错误，提示是猜大了还是小了   
+
+my_age = 30
+user_input = int(input("input you guess num:"))
+if user_input == my_age:
+    print("congratulations, you get it !")
+elif user_input > my_age:
+    print("oh, think is bigger.")
+else:
+    print("think is smaller") 
     
     
     
