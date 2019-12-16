@@ -70,3 +70,23 @@ print(b)             #output:  ['多是自拍,高质量图片很多', '资源不
 
 
 ######################################## 字典循环 #########################################
+#打印字典中key和值
+dict = {
+    'stu01' : "miya",
+    'stu02' : "cuihua",
+    'stu03' : "fengrun",
+}
+#1,
+for key in dict:
+    print(key, dict[key])           
+#output: stu01 miya
+stu03 fengrun
+stu02 cuihua
+
+
+#2,
+for k, v in dict.items():          ##会先把dict转成list,数据里大时莫用
+    print(k,v)
+#output: stu01 miya
+stu03 fengrun
+stu02 cuihua
