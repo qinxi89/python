@@ -3,6 +3,8 @@
 2.unicode 分为 utf-32(占4个字节),utf-16(占两个字节)，utf-8(占1-4个字节)， so utf-16就是现在最常用的unicode版本， 不过在文件里存的还是utf-8，因为utf8省空间
 3.在py3中encode,在转码的同时还会把string 变成bytes类型，decode在解码的同时还会把bytes变回string
 
+
+
 msg = '我爱北京天安门'
 msg_gb2312 = msg.encode("gb2312")     ##默认就是unicode
 gb2312_to_unicode = msg_gb2312.decode("gb2312")
