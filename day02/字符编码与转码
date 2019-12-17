@@ -1,0 +1,19 @@
+需知:
+1.在python2默认编码是ASCII, python3里默认是unicode
+2.unicode 分为 utf-32(占4个字节),utf-16(占两个字节)，utf-8(占1-4个字节)， so utf-16就是现在最常用的unicode版本， 不过在文件里存的还是utf-8，因为utf8省空间
+3.在py3中encode,在转码的同时还会把string 变成bytes类型，decode在解码的同时还会把bytes变回string
+
+msg = '我爱北京天安门'
+msg_gb2312 = msg.encode("gb2312")     ##默认就是unicode
+gb2312_to_unicode = msg_gb2312.decode("gb2312")
+gb2312_to_utf8 = msg_gb2312.decode("gb2312").encode("utf8")
+print(gb2312_to_unicode)        #output：    我爱北京天安门
+print(msg)                      #output：    我爱北京天安门
+print(msg_gb2312)               #output: b'\xce\xd2\xb0\xae\xb1\xb1\xbe\xa9\xcc\xec\xb0\xb2\xc3\xc5'
+print(gb2312_to_utf8)    #output: b'\xe6\x88\x91\xe7\x88\xb1\xe5\x8c\x97\xe4\xba\xac\xe5\xa4\xa9\xe5\xae\x89\xe9\x97\xa8'
+
+
+
+
+
+
