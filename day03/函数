@@ -24,5 +24,39 @@ def calc(x,y):            #x,y为形参
 c = calc(a,b)             ＃a, b 为实参
 print(c)
 
+################################## 默认参数   ########################################
+def stu_register(name, age , course,country="CN"):
+    print("-----------注册学生信息")
+    print("姓名：",name)
+    print("年龄：",age)
+    print("课程：", course)
+    print("国籍：", country)
+
+stu_register("qinxi",24, "英文","canada")
+stu_register("cuihua",18,"match")
+stu_register("jiaozi", 6,"linux")
+注：
+发现 country 这个参数 基本都 是"CN", 就像我们在网站上注册用户，像国籍这种信息，你不填写，默认就会是 中国， 这就是通过默认参数实现的，把country变成默认参数非常简单
+
+def stu_register(name,age,course,country="CN"):
+这样，这个参数在调用时不指定，那默认就是CN，如果指定了值，就用你指定的值。
+
+###############################  关键参数  ##########################################
+正常情况下，给函数传参数要按顺序，不想按顺序就可以用关键参数，只需指定参数名即可，但记住一个要求就是，关键参数必须放在位置参数之后。
+stu_register(age=22,name='alex',course="python",)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
