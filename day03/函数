@@ -45,7 +45,22 @@ def stu_register(name,age,course,country="CN"):
 正常情况下，给函数传参数要按顺序，不想按顺序就可以用关键参数，只需指定参数名即可，但记住一个要求就是，关键参数必须放在位置参数之后。
 stu_register(age=22,name='alex',course="python",)
 
+##############################  非固定参数 ##########################################
 
+# 若你的函数在定义时不确定用户想传入多少个参数，就可以使用非固定参数
+# A：  *args
+
+def stu_regitster(name, age, *args):                #*args 会把多传入的参数变成一个元组形式
+    print(name, age,args)
+
+stu_regitster("xixi", 26)           #output:     xixi 26 ()     #后面这个（）就是args,只是因为没有传值，所以为空。
+stu_regitster("xier", 36, "python","li")          #output:      xier 36 ('python', 'li')
+
+# B：   **kwargs 会把多传入的参数变成一个dict形式。
+
+def stu_register1(name, age, *args, **kwargs):
+    print(name,age,args,kwargs)
+stu_register1("qinxi", 22)              #output:     qinxi 22 () {}     #后面这个{} 就是kwargs,只是没有传值，所以为空。
 
 
 
