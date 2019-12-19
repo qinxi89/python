@@ -73,9 +73,18 @@ stu_register1("jack", 32, "cn",  sex = "Male", provice = "HeNan")    #output: ja
 
 
 
+######################################  函数的局部变量与全局变量  ###########################
 
 
+name = "qinxi"
 
+def change_name(name):
+    print("before name:",name)        #output：    before name: qinxi
+    name = "翠花"                      
+    print("after change", name)      #output:    after change 翠花
+
+change_name(name)
+print("在外面看看name改了吗",name)      #output:  在外面看看name改了吗 qinxi
 
 
 
