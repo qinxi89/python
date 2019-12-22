@@ -49,8 +49,21 @@ print(b)              #输出内容：['I', ' ', 'l', 'o', 'v', 'e', ' ', 'm', '
 #返回列表元素长度
 l = len(b)
 print(l)            #output： 14
-
+################# max 和 min方法 ######################
+使用max和min方法，数据类型必须一致
 max()   返回序列或者参数集合中的最大值
+min()   返回序列或者参数集合中的最小值
+
+i = min(1,4,7,10,50,6,2)
+t = max(1,4,7,10,50,6,2)    #元组
+print(t)        #output:   50
+print(i)        #output:   1
+
+numbers = [-2,9,34,0,1,98,3]   #列表
+s = max(numbers)
+i = min(numbers)
+print(s)         #output: 98
+print(i)         #outout: -2
 
 
 
