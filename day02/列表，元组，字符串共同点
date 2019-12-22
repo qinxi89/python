@@ -65,6 +65,21 @@ i = min(numbers)
 print(s)         #output: 98
 print(i)         #outout: -2
 
+#sum     返回元素的和
+numbers = [-2,9,34,0,1,98,3]   #列表
+s = sum(numbers)
+print(s)                #output: 143        返回列表元素的总和
 
+t = sum(numbers,-3)
+print(t)                #output: 140
+#sort 从小到大排序
+p = sorted(numbers)
+print(p)               #output:  [-2, 0, 1, 3, 9, 34, 98]
+
+#reversed 逆序，从后往前排序
+r = reversed(numbers)
+print(r)          #output: <list_reverseiterator object at 0x1032a8fd0> 返回迭代器对象，可以通过list()转换为列表
+r1 = list(reversed(numbers))
+print(r1)         #output:[3, 98, 1, 0, 34, 9, -2]
 
 
