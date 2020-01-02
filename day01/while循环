@@ -23,8 +23,16 @@ while len(numbers) >0:
 print("even的值为：",even)       #output: even的值为： [8, 42, 12]
 print("odd的值为：",odd)         #output: odd的值为： [3, 5, 37]  
 
-
-
+############################################## 案例二 ################################################
+#倒计时  
+import time          
+               
+count = 10           
+while (count > 0):   
+    print("倒计时：",coun
+    count = count -1 
+    time.sleep(0.7)  
+print("Good bye!")   
 
 
 
