@@ -1,0 +1,31 @@
+Python 编程中 while 语句用于循环执行程序，即在某条件下，循环执行某段程序，以处理需要重复处理的相同任务。其基本形式为：
+
+while 判断条件(condition)：
+    执行语句(statements)……
+执行语句可以是单个语句或语句块。判断条件可以是任何表达式，任何非零、或非空（null）的值均为true。
+
+
+
+################################################# 案 例 ################################################
+#倒叙取出列表中的奇数，偶数
+numbers = [12, 37, 5, 42, 8 ,3]                           
+even = []                                                 
+odd = []                                                  
+                                                          
+                                                          
+while len(numbers) >0:                                    
+    number = numbers.pop()                                
+    if(number % 2 ==0):                                   
+      even.append(number)                                 
+    else:                                                 
+      odd.append(number)                                  
+                                                          
+print("even的值为：",even)       #output: even的值为： [8, 42, 12]
+print("odd的值为：",odd)         #output: odd的值为： [3, 5, 37]  
+
+
+
+
+
+
+
