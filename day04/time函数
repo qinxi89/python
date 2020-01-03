@@ -33,7 +33,9 @@ print("End: %s" % time.ctime())   #output: start: Fri Jan  3 11:08:26 2020  End:
 
 
 ###############################################  案例 一 ######################################
-import time
+#打印进度条
+
+impimport time
 
 scale = 100
 print(" 执行开始 ".center(scale//2,"-"))  # .center() 控制输出的样式，宽度为 25//2，即 22，汉字居中，两侧填充 -
