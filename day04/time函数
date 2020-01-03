@@ -1,26 +1,35 @@
 import time
 import calendar
 
-#打印当前时间戳
+############################################# time ########################################
+#返回当前时间的时间戳（1970纪元后经过的浮点秒数）
 ticks = time.time()
 print("当前的时间戳为：", ticks)          #output: 当前的时间戳为： 1577982248.683969
 
+############################################# localtime ####################################
 #获取当前时间,从返回浮点数的时间戳方式向时间元组转换，只要将浮点数传递给如localtime之类的函数。
 localtime = time.localtime(time.time())
 print("当前时间为：", localtime)         #output: 当前时间为： time.struct_time(tm_year=2020, tm_mon=1, tm_mday=3, tm_hour=0, tm_min=26, tm_sec=27, tm_wday=4, tm_yday=3, tm_isdst=0)
 
+############################################# . asctime  ####################################
+#time.asctime([tupletime]) 接受时间元组并返回一个可读的形式为"Tue Dec 11 18:07:14 2008"
 #获取格式化的时间,最简单的获取可读的时间模式的函数是asctime()
 localtime1 = time.asctime(time.localtime(time.time()))
 print("本地时间为：", localtime1)      #output: 本地时间为： Fri Jan  3 00:29:04 2020
 
+###############################################  strftime   ################################
+#time.strftime(fmt[,tupletime]) 接收以时间元组，并返回以可读字符串表示的当地时间，格式由fmt决定。
 #格式化日期,我们可以使用 time 模块的 strftime 方法来格式化日期
 # time.strftime(format[,t])
-t = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-print("当前时间是：", t)                #output: 当前时间是： 2020-01-03 00:33:30
 
 t2 = time.strftime("%a %b %d %H:%M:%S %Y", time.localtime())
 print("当前日期为：", t2)              #output:当前日期为： Fri Jan 03 00:38:26 2020
 
+############################################## time.sleep ###################################
+#time.sleep(secs)  推迟调用线程的运行，secs指秒数。
+print("start: %s "% time.ctime())
+time.sleep(5)
+print("End: %s" % time.ctime())   #output: start: Fri Jan  3 11:08:26 2020  End: Fri Jan  3 11:08:31 2020
 
 
 
