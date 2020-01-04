@@ -90,3 +90,31 @@ for k, v in dict.items():          ##会先把dict转成list,数据里大时莫�
 #output: stu01 miya
 stu03 fengrun
 stu02 cuihua
+
+
+##################################### 字典的 其他方法 #####################################
+Python 字典 fromkeys() 函数用于创建一个新字典，以序列 seq 中元素做字典的键，value 为字典所有键对应的初始值。
+
+
+seq = ('Google', 'Runoob', 'Taobao')
+dict = dict.fromkeys(seq)
+print("新字典为： %s " % str(dict)) #output: 新字典为： {'Taobao': None, 'Runoob': None, 'Google': None}
+
+dict = dict.fromkeys(seq, 10)
+print("新字典为： %s" % str(dict))   #output: 新字典为： {'Taobao': 10, 'Runoob': 10, 'Google': 10}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
