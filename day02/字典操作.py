@@ -103,8 +103,9 @@ print("新字典为： %s " % str(dict)) #output: 新字典为： {'Taobao': Non
 dict = dict.fromkeys(seq, 10)
 print("新字典为： %s" % str(dict))   #output: 新字典为： {'Taobao': 10, 'Runoob': 10, 'Google': 10}
 
-
-
+dict2 = {}
+dict2 = dict2.fromkeys(range(4),'赞')
+print(dict2)                     #output: {0: '赞', 1: '赞', 2: '赞', 3: '赞'}
 
 
 
