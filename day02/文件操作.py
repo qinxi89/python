@@ -68,6 +68,32 @@ file.name	    返回文件的名称。
 file.softspace	如果用print输出后，必须跟一个空格符，则返回false。否则返回true。
 
 
+fo = open("foo.txt", "w")
+print("文件名：", fo.name)            #output:foo.txt
+print("是否已经关闭", fo.closed)       #output: False
+print("访问模式：", fo.mode)           #output: w
+print("末尾是否强制加空格：", fo.softspace)   #python 3中不再支持
+
+########################################### close 函数 ########################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
