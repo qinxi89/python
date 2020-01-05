@@ -75,9 +75,14 @@ print("访问模式：", fo.mode)           #output: w
 print("末尾是否强制加空格：", fo.softspace)   #python 3中不再支持
 
 ########################################### close 函数 ########################################
+File 对象的 close（）方法刷新缓冲区里任何还没写入的信息，并关闭该文件，这之后便不能再进行写入。
+当一个文件对象的引用被重新指定给另一个文件时，Python 会关闭之前的文件。用 close（）方法关闭文件是一个很好的习惯。
 
-
-
+例子：
+fo = open("foo.txt", "w")
+print("文件名：", fo.name)     #output:文件名： foo.txt
+fo.close()
+print("文件是否关闭：", fo.closed)        #output: True
 
 
 
