@@ -130,6 +130,53 @@ str = fo.read(10)
 print("重新读取字符串：",str)   #output:  www.baidu.
 fo.close()
 
+########################################## rename()方法  #######################################
+#rename()方法需要两个参数，当前的文件名和新文件名。
+语法：
+os.rename(current_file_name, new_file_name)
+
+#例子
+# os.rename("foo.txt","qinxi.txt")
+
+########################################## remove()方法 ######################################
+#remove()方法，你可以用remove()方法删除文件，需要提供要删除的文件名作为参数。
+语法：
+os.remove(file_name)
+例子：
+#os.remove("qinxi.txt")
+
+######################################### mkdir()方法 ########################################
+#mkdir()方法，可以使用os模块的mkdir()方法在当前目录下创建新的目录们。你需要提供一个包含了要创建的目录名称的参数。
+语法：
+os.mkdir("newdir")
+
+######################################## chdir()方法 ########################################
+# #chdir()方法，可以用chdir()方法来改变当前的目录。chdir()方法需要的一个参数是你想设成当前目录的目录名称。
+语法：
+os.chdir("newdir")
+例子：
+os.chdir("cuihua")
+fo = open("foo.txt", "w")
+fo.write("this is a test file..")
+
+####################################### getcwd()方法 #####################################
+#getcwd()方法显示当前的工作目录。
+语法：
+os.getcwd()
+#例子
+print("当前工作目录：", os.getcwd())     #output: 当前工作目录： /Users/芹溪/python/test/cuihua
+
+###################################### rmdir()方法 #######################################
+#rmdir()方法
+mdir()方法删除目录，目录名称以参数传递。在删除这个目录之前，它的所有内容应该先被清除。
+
+语法：
+os.rmdir('dirname')
+#例子
+os.chdir("/Users/芹溪/python/test/cuihua")
+os.remove("foo.txt")
+os.chdir("/Users/芹溪/python/test")
+os.rmdir("cuihua")
 
 
 
