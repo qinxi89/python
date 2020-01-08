@@ -23,7 +23,26 @@ python 面向对象：
 
 
 ################################################   创建类   ####################################################
+使用 class 语句来创建一个新类，class 之后为类的名称并以冒号结尾:
+class ClassName:
+   '类的帮助信息'   #类文档字符串
+   class_suite  #类体
+   
+类的帮助信息可以通过ClassName.__doc__查看。
+class_suite 由类成员，方法，数据属性组成。
 
+例子：
+class Employee:
+     empCount = 0
+     def __init__(self, name , salary):
+         self.name = name
+         self.salary = salary
+         Employee.empCount += 1
+     def displayCount(self):
+         print("Total Employee %d" % Employee.empCount)
+
+     def displayEmployee(self):
+         print("Name:",self.name, "Salary:", self.salary)
 
 
 ############################################### 创建实例 ######################################################
