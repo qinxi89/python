@@ -1,0 +1,17 @@
+# 设计一个函数，统计字符串中英文字母和数字各自出现的次数
+
+def count_letter_number(string):
+    letter_count=0
+    digit_count = 0
+    for ch in string:
+        if 'a' <= ch <= 'z' or 'A'<= ch <= 'Z':
+           letter_count +=1
+        elif '0' <= ch <= '9':
+            digit_count +=1
+    return letter_count,digit_count
+def main():
+    print(count_letter_number('a1b2c3d4'))
+    print(count_letter_number('a123455678'))
+    print(count_letter_number('12334556!!'))
+if __name__ == '__main__':
+    main()
