@@ -1,0 +1,15 @@
+ #设计一个函数，计算字符串中所有数字序列的和
+import re
+def sum_num_seq(string):
+     nums = re.compile(r'\d+')    #\d是匹配数字字符[0-9]，+匹配一个或多个
+     mylist = nums.findall(string)   #此处返回的是列表字符串，如['1', '2', '3', '4']，findall()返回的是括号所匹配到的结果，多个括号就会返回多个括号分别匹配到的结果
+     my_sum = 0
+     for num in mylist:
+         my_sum +=int(num)     #需要将上面返回的字符串转化成int类型
+     return my_sum
+def main():
+     print(sum_num_seq('a1b2c3d4'))
+     print(sum_num_seq('123hello456good789bye'))
+
+if __name__ == '__main__':
+     main()
