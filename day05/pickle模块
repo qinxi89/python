@@ -1,0 +1,45 @@
+
+使用pickle模块可以实现序列化和反序列化：
+那么为什么需要序列化和反序列化这一操作呢？
+
+　　1.便于存储。
+  序列化过程将文本信息转变为二进制数据流。这样就信息就容易存储在硬盘之中，当需要读取文件的时候，从硬盘中读取数据，然后再将其反序列化便可以得到原始的数据。
+  在Python程序运行中得到了一些字符串、列表、字典等数据，想要长久的保存下来，方便以后使用，而不是简单的放入内存中关机断电就丢失数据。python模块大全中的
+  Pickle模块就派上用场了，它可以将对象转换为一种可以传输或存储的格式。
+　　2.便于传输。
+  当两个进程在进行远程通信时，彼此可以发送各种类型的数据。无论是何种类型的数据，都会以二进制序列的形式在网络上传送。发送方需要把這个对象转换为字节序列，
+  在能在网络上传输；接收方则需要把字节序列在恢复为对象。
+  
+pickle是python语言的一个标准模块，安装python后已包含pickle库，不需要单独再安装。
+pickle模块有两类主要的接口，即序列化和反序列化。
+
+1.1、序列化方法pickle.dump()
+序列化的方法为 pickle.dump()，该方法的相关参数如下：
+pickle.dump(obj, file, protocol=None,*,fix_imports=True)
+该方法实现的是将序列化后的对象obj以二进制形式写入文件file中，进行保存。它的功能等同于 Pickler(file, protocol).dump(obj)。
+
+1.2、序列化方法pickle.dumps()
+pickle.dumps()方法的参数如下：
+pickle.dumps(obj, protocol=None,*,fix_imports=True)
+pickle.dumps()方法跟pickle.dump()方法的区别在于，pickle.dumps()方法不需要写入文件中，它是直接返回一个序列化的bytes对象。
+
+2.1 反序列化方法pickle.load()
+
+序列化的方法为 pickle.load()，该方法的相关参数如下：
+pickle.load(file, *,fix_imports=True, encoding=”ASCII”. errors=”strict”)
+该方法实现的是将序列化的对象从文件file中读取出来。它的功能等同于 Unpickler(file).load()。
+
+2、2 反序列化方法pickle.loads()
+
+pickle.loads()方法的参数如下：
+pickle.loads(bytes_object, *,fix_imports=True, encoding=”ASCII”. errors=”strict”)
+pickle.loads()方法跟pickle.load()方法的区别在于，pickle.loads()方法是直接从bytes对象中读取序列化的信息，而非从文件中读取。
+
+
+
+
+
+
+
+
+
