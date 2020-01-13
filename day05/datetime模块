@@ -5,6 +5,76 @@ datetime.date:date部分只含有年 月 日信息
 datetime.time:time部分只含有时 分 秒 微秒
 datetime.datetime:datetime部分包含date 和 time 两部分的信息,也就是包含年 月 日 时 分 秒 微秒
 
+相比time模块，datetime提供了更加丰富的对时间日期处理的工具。
+在datetime模块中，提供了如下四个常用的类：
+
+date：属性：year， month和day 。
+time：属性：hour， minute， second， microsecond和tzinfo。
+datetime：日期和时间的组合。 属性：year ，month， day， hour， minute，second，microsecond和tzinfo 。
+timedelta：表示两个date， time或datetime的时间差。
+
+############################################ datetime.timedelta  ###########################################
+timedelta类初始化的方式如下：
+datetime.timedelta([days[, seconds[, microseconds[, milliseconds[, minutes[, hours[, weeks]]]]]]])
+
+默认所有的参数全部都是0。
+在对timedelta对象初始化后，timedelta内置会将其存储为三个属性：days， seconds和microseconds。从而通过这三个属性来标识timedelta对象。
+
+实例方法：timedelta.total_seconds()
+timedelta对象支持一个方法：total_seconds()
+即将时间差转换为以秒为单位的一个浮点数。
+
+示例代码：
+from datetime import timedelta
+year = timedelta(days=365)
+print year.total_seconds()
+# 31536000.0
+
+######################################## datetime.date   ##############################################
+date的初始化方式如下：
+datetime.date(year, month, day)
+其中，三个参数year, month, day都是必填的。
+
+date中包含如下静态方法：
+date.today() 返回当前本地日期对象
+date.fromtimestamp(timestamp) 根据时间戳返回当前日志对象
+
+date中包含如下类方法：
+replace([year], [month], [day]) 修改其中某个/些属性。
+timetuple() 返回time.struct_time类型的对象。
+strftime(format) 返回指定格式的字符串。使用方式同time模块。
+
+######################################### datetime.time    #########################################
+初始化方式如下：
+datetime.time([hour[, minute[, second[, microsecond[, tzinfo]]]]])
+
+对于一个time对象而言，包含以下四个属性：
+0 <= hour < 24
+0 <= minute < 60
+0 <= second < 60
+0 <= microsecond < 1000000.
+
+date中包含如下类方法：
+replace([hour], [minute], [second], [microsecond], [tzinfo]) 修改其中某个/些属性。
+strftime(format) 返回指定格式的字符串。使用方式同time模块。
+
+#######################################   datetime.datetime ######################################
+初始化方式如下：
+
+datetime.datetime(year, month, day[, hour[, minute[, second[, microsecond[, tzinfo]]]]])
+datetime中包含如下静态方法：
+
+datetime.today() 返回当前本地日期对象
+datetime.now([tz]) 返回当前的本地时间日期的datetime对象。
+datetime.utcnow() 返回当前的UTC时间日期的datetime对象。
+datetime.fromtimestamp(timestamp) 根据当前时间戳返回当前datetime对象
+datetime.utcfromtimestamp(timestamp) 根据UTC时间戳返回当前datetime对象
+datetime中包含如下类方法：
+
+replacereplace([year[, month[, day[, hour[, minute[, second[, microsecond[, tzinfo]]]]]]]]) 修改某个属性
+timetuple() 返回time.struct_time类型的对象。
+utctimetuple() 返回UTC的time.struct_time类型的对象。
+strftime(format) 返回指定格式的字符串。使用方式同time模块。
 
 
 
