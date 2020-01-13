@@ -1,0 +1,58 @@
+import time
+import calendar
+
+############################################# time ########################################
+#返回当前时间的时间戳（1970纪元后经过的浮点秒数）
+ticks = time.time()
+print("当前的时间戳为：", ticks)          #output: 当前的时间戳为： 1577982248.683969
+
+############################################# localtime ####################################
+#获取当前时间,从返回浮点数的时间戳方式向时间元组转换，只要将浮点数传递给如localtime之类的函数。
+localtime = time.localtime(time.time())
+print("当前时间为：", localtime)         #output: 当前时间为： time.struct_time(tm_year=2020, tm_mon=1, tm_mday=3, tm_hour=0, tm_min=26, tm_sec=27, tm_wday=4, tm_yday=3, tm_isdst=0)
+
+############################################# . asctime  ####################################
+#time.asctime([tupletime]) 接受时间元组并返回一个可读的形式为"Tue Dec 11 18:07:14 2008"
+#获取格式化的时间,最简单的获取可读的时间模式的函数是asctime()
+localtime1 = time.asctime(time.localtime(time.time()))
+print("本地时间为：", localtime1)      #output: 本地时间为： Fri Jan  3 00:29:04 2020
+
+###############################################  strftime   ################################
+#time.strftime(fmt[,tupletime]) 接收以时间元组，并返回以可读字符串表示的当地时间，格式由fmt决定。
+#格式化日期,我们可以使用 time 模块的 strftime 方法来格式化日期
+# time.strftime(format[,t])
+
+t2 = time.strftime("%a %b %d %H:%M:%S %Y", time.localtime())
+print("当前日期为：", t2)              #output:当前日期为： Fri Jan 03 00:38:26 2020
+
+############################################## time.sleep ###################################
+#time.sleep(secs)  推迟调用线程的运行，secs指秒数。
+print("start: %s "% time.ctime())
+time.sleep(5)
+print("End: %s" % time.ctime())   #output: start: Fri Jan  3 11:08:26 2020  End: Fri Jan  3 11:08:31 2020
+
+
+###############################################  案例 一 ######################################
+#打印进度条
+
+impimport time
+
+scale = 100
+print(" 执行开始 ".center(scale//2,"-"))  # .center() 控制输出的样式，宽度为 25//2，即 22，汉字居中，两侧填充 -
+
+#调用一次 perf_counter()，从计算机系统里随机选一个时间点A，计算其距离当前时间点B1有多少秒。
+#当第二次调用该函数时，默认从第一次调用的时间点A算起，距离当前时间点B2有多少秒。两个函数取差，即实现从时间点B1到B2的计时功能。
+start = time.perf_counter()
+for i in range(scale+1):
+    a = '#' * i             # i 个长度的 # 符号
+    b = '.' * (scale-i)  # scale-i） 个长度的 . 符号。符号 * 和 . 总长度为50
+    c = (i/scale)*100  # 显示当前进度，百分之多少
+    dur = time.perf_counter() - start    # 计时，计算进度条走到某一百分比的用时
+    # \r用来在每次输出完成后，将光标移至行首，这样保证进度条始终在同一行输出，即在一行不断刷新的效果；
+    # {:^3.0f}，输出格式为居中，占3位，小数点后0位，浮点型数，对应输出的数为c；{}，对应输出的数为a；{}，对应输出的数为b；{:.2f}，输出有两位小数的浮点数，对应输出的数为dur；end=''，用来保证不换行，不加这句默认换行。
+    print("\r{:^3.0f}%[{}->{}]{:.2f}s".format(c,a,b,dur),end='')
+    time.sleep(0.1)     # 在输出下一个百分之几的进度前，停止0.1秒
+print("\n"+ " 执行结果 ".center(scale//2,'-'))
+
+
+
