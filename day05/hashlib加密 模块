@@ -1,1 +1,26 @@
+hashlib是一个提供字符加密功能的模块，包含MD5和SHA的加密算法，具体支持md5,sha1, sha224, sha256, sha384, sha512等算法。
+该模块在用户登录认证方面应用广泛，对文本加密也很常见。
+
+基本调用：
+1 import hashlib
+2 new_md5 = hashlib.md5()  #创建hashlib的md5对象
+3 new_md5.update('字符串')  #将字符串载入到md5对象中，获得md5算法加密。
+4 print(new_md5.hexdigest())  #通过hexdigest()方法，获得new_md5对象的16进制md5显示。
+简单来说。就是三步：
+
+1，建立加密对象。2，对字符串进行算法加密。3，获得16进制显示
+
+可以创建的加密算法有：md5,sha1, sha224, sha256, sha384, sha512
+
+例：
+ new_md5 = hashlib.md5()   
+ new_sha1 = hashlib.sha1()  
+ new_sha256 = hashlib.sha256()
+
+简单调用：
+ new_md5 = hashlib.new('md5',b'字符串').hexdigest()
+ #或者
+new_md5 = hashlib.md5(str(time.time().encode('utf-8')).hexdigest()
+ 
+注意：向对象中传入字符串时，必须为编码类型。可以使用字符串前b' '的方法或使用.encode('UTF-8')的方法，使字符串变为bytes类型。
 
