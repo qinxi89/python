@@ -1,1 +1,54 @@
+configparser模块主要用于读取配置文件，导入方法：import configparser
+
+1、configparser初始化 
+import configparser
+# 生成ConfigParser对象
+config = configparser.ConfigParser()
+# 读取配置文件
+filename = 'config.ini'
+config.read(filename, encoding='utf-8')
+
+2、获取节点sections
+ConfigParserObject.sections()      以列表形式返回configparser对象的所有节点信息
+
+# 获取所有节点
+all_sections = config.sections()
+print('sections: ', all_sections)   # 结果sections:  ['user', 'connect']
+
+3、获取指定节点的所有配置信息
+ConfigParserObject.items(section)    以列表形式返回某个节点section对应的所有配置信息
+
+# 获取指定节点的配置信息
+items = config.items('user')
+print(items)            # 结果 [('user_name', "'Mr,X'"), ('password', "'222'")]
+
+4、获取指定节点的options
+ConfigParserObject.options(section)    以列表形式返回某个节点section的所有key值
+
+# 获取指定节点的options信息
+options = config.options('user')
+print(options)          # 结果 ['user_name', 'password']
+
+
+5、获取指定节点下指定option的值
+ConfigParserObject.get(section, option)
+返回结果是字符串类型
+ConfigParserObject.getint(section, option)
+返回结果是int类型
+ConfigParserObject.getboolean(section, option)
+返回结果是bool类型
+ConfigParserObject.getfloat(section, option)
+返回结果是float类型
+
+6、检查section 或option是否存在
+ConfigParserObject.has_section(section)
+ConfigParserObject.has_option(section, option)
+返回bool值，若存在返回True，不存在返回False
+
+
+
+
+
+
+
 
