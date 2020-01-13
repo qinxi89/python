@@ -1,1 +1,31 @@
 
+datetime中分成三个大部分,其中,
+
+datetime.date:date部分只含有年 月 日信息
+datetime.time:time部分只含有时 分 秒 微秒
+datetime.datetime:datetime部分包含date 和 time 两部分的信息,也就是包含年 月 日 时 分 秒 微秒
+
+
+
+
+
+
+
+
+
+
+
+例子：
+import datetime
+
+bday = datetime.date(2020,9,19)
+#今天的日期
+tday = datetime.date.today()
+days = bday - tday
+print("生日： {}".format(bday))
+print('今天的日期：{}'.format(tday))
+print('距离生日还有{}天'.format(days))
+
+#output:   生日： 2020-09-19
+           今天的日期：2020-01-13
+           距离生日还有250 days, 0:00:00天
