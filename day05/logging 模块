@@ -31,9 +31,24 @@
  WARNING	                    当某些不期望的事情发生时记录的信息（如，磁盘可用空间较低），但是此时应用程序还是正常运行的
  ERROR	                      由于一个更严重的问题导致某些功能不能正常运行时记录的信息
  CRITICAL	                  当发生严重错误，导致应用程序不能继续运行时记录的信息
+上面列表中的日志等级是从上到下依次升高的，即：DEBUG < INFO < WARNING < ERROR < CRITICAL，而日志的信息量是依次减少的；
 
+开发应用程序或部署开发环境时，可以使用DEBUG或INFO级别的日志获取尽可能详细的日志信息来进行开发或部署调试；
+应用上线或部署生产环境时，应该使用WARNING或ERROR或CRITICAL级别的日志来降低机器的I/O压力和提高获取错误日志信息的效率。
 
 5、logging 模块的使用方式介绍
+logging模块定义的模块级别的常用函数
+       函数	                                                 说明
+logging.debug(msg, *args, **kwargs)	               创建一条严重级别为DEBUG的日志记录
+logging.info(msg, *args, **kwargs)	                创建一条严重级别为INFO的日志记录
+logging.warning(msg, *args, **kwargs)	             创建一条严重级别为WARNING的日志记录
+logging.error(msg, *args, **kwargs)	               创建一条严重级别为ERROR的日志记录
+logging.critical(msg, *args, **kwargs)            	创建一条严重级别为CRITICAL的日志记录
+logging.log(level, *args, **kwargs)               	创建一条严重级别为level的日志记录
+logging.basicConfig(**kwargs)	                     对root logger进行一次性配置
+
+其中logging.basicConfig(**kwargs)函数用于指定“要记录的日志级别”、“日志格式”、“日志输出位置”、“日志文件的打开模式”等信息，其他几个都是用于记录各个级别日志的函数。
+默认情况下Python的logging模块将日志打印到了标准输出中，且只显示了大于等于WARNING级别的日志，这说明默认的日志级别设置为WARNING
 
 6、日志的简单配置
 
