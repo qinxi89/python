@@ -32,7 +32,13 @@ print("it is the %dth day." %sum)
 
 # 3. 输入三个整数，x, y, z,请把这三个数由小到大输出
 
+I = []                   # 点定义一个空的列表
+for i in range(4):       # 指定循环几次，即要输入几个数做对比
+    x = int(input('please input the num:\n'))
+    I.append(x)         # 输入的数字追加到空列表中
 
+I.sort()              #列表排序
+print(I)
 
 
 # 4. 用*号在纸上写出字母C，再分行输出。
