@@ -19,3 +19,19 @@ for i in range(10):
     print(i,end=' ')      #output:    0 1 2 3 4 5 6 7 8 9 
     
     
+#10秒加载过程
+import time
+print("---RUNOOB EXAMPLE : Loading 效果 ----")
+print("Loading",end="")
+for i in range(20):
+    print(".",end='',flush=True)        #output: ---RUNOOB EXAMPLE : Loading 效果 ----  Loading....................
+    time.sleep(0.5) 
+    
+    
+    
+    
+    
+    
+    
+    
+    
