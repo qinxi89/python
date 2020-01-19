@@ -40,6 +40,13 @@ for i in range(4):       # 指定循环几次，即要输入几个数做对比
 I.sort()              #列表排序
 print(I)
 
+扩展：取输入三个数中最大的值
+num1 = int(input('num1:'))
+num2 = int(input('num1:'))
+num3 = int(input('num1:'))
+num = max(num1,num2,num3)
+print(num)
+
 
 # 4. 用*号在纸上写出字母C，再分行输出。
 
