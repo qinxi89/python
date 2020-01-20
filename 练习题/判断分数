@@ -1,0 +1,22 @@
+
+
+score = int(input("输入你的分数："))
+if score >=90 and score<=100:
+    grade='A'
+elif score >=75 and score<90:
+    grade='B'
+elif score >=60 and score<75:
+    grade='C'
+elif score <60 and score >=0:
+    grade='D'
+else:
+    grade='Input error'
+
+print('%s belong to %s' %(score,grade))
+
+
+
+
+
+
+
